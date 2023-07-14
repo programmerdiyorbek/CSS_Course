@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Animated Button</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css" media="all" />
+</head>
+<body>
+    <a href="#">
+        <i></i><i></i>
+        <span>Button</span>
+    </a>
+    <script type="text/javascript" charset="utf-8">
+        let btn = document.querySelector("a");
+        btn.addEventListener("mousemove", e => {
+            let rect = e.target.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            btn.style.setProperty('--x', x + 'deg');
+        })
+    </script>
+</body>
+</html>
